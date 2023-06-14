@@ -1,0 +1,97 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./icons.scss";
+
+*{
+    box-sizing: border-box;
+}
+$chat-box-color:#f3f3f3;
+
+.equation{
+    font-size: 22px;
+}
+
+.next-question-anim{
+    animation: margin-left-zero 0.5s linear infinite;
+}
+
+.option-label{
+    border-radius:10px;
+    border:1px solid var(--bs-primary);
+    color:var(--bs-primary);
+    padding-left:5%;
+    text-align: center;
+    background-color: white;
+}
+
+input[type="radio"]:checked+.option-label{
+    background-color:#08f5476f;
+    color:white;
+}
+@keyframes margin-left-zero {
+    from{
+        margin-left: 0;
+    }
+    to{
+        margin-left:-100%;
+    }
+}
+.equation{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.chat-box{
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: $chat-box-color;
+    position: relative;
+    text-align: left;
+}
+.chat-box::before{
+    content: "";
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    border:10px solid $chat-box-color;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+}
+
+.chatting-robot{
+    width:40%;
+    float: left;
+    text-align: right;
+}
+
+.selected-var{
+    font-weight: bold;
+    color:red;
+}
+.btn-graph-selected{
+    background-color: var(--bs-primary);
+    color:white;
+}
+.chatting-robot .mouth{
+    animation: robot-mouth-anim 1s linear infinite;
+    stroke: black;
+    stroke-width:2px;
+}
+
+@keyframes robot-mouth-anim {
+    from{
+        fill: none;
+    }
+    to{
+        fill:black;
+    }
+}
+.chat-block{
+    width: 60%;
+    float: left;
+    text-align: left;
+}
